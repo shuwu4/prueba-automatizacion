@@ -219,3 +219,49 @@ main().catch((error) => {
   console.error("No se pudo completar la revisión:", error.message);
   process.exitCode = 1;
 });
+
+//poweshell
+// if (-not $env:WEBHOOK_URL) {
+//     $env:WEBHOOK_URL = Read-Host "Pega tu url de Webhook.site"
+// }[Environment]::SetEnvironmentVariable(
+//     "WEBHOOK_URL",
+//     $env:WEBHOOK_URL,
+//     "User"
+// )
+
+//Powershell
+
+// $carpetaProyecto = "C:\Users\reyes\prueba-automatizacion"
+// $rutaNode = (Get-Command node -ErrorAction Stop).Source
+// $rutaEjecutor = Join-Path $carpetaProyecto "ejecutar.ps1"
+// $rutaPowerShell = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
+
+// $argumentos = '-NoProfile -ExecutionPolicy Bypass -File "{0}" -NodePath "{1}"' -f $rutaEjecutor, $rutaNode
+
+// $accion = New-ScheduledTaskAction `
+//     -Execute $rutaPowerShell `
+//     -Argument $argumentos `
+//     -WorkingDirectory $carpetaProyecto
+
+// $horario = New-ScheduledTaskTrigger -Daily -At "09:00"
+
+// $usuario = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+
+// $principal = New-ScheduledTaskPrincipal `
+//     -UserId $usuario `
+//     -LogonType Interactive `
+//     -RunLevel Limited
+
+// $opciones = New-ScheduledTaskSettingsSet `
+//     -StartWhenAvailable `
+//     -AllowStartIfOnBatteries `
+//     -DontStopIfGoingOnBatteries `
+//     -MultipleInstances IgnoreNew
+
+// Register-ScheduledTask `
+//     -TaskName "AlertaReabastecimiento" `
+//     -Action $accion `
+//     -Trigger $horario `
+//     -Principal $principal `
+//     -Settings $opciones `
+//     -Description "Revisa inventario y envia un mensaje diario."
