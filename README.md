@@ -17,7 +17,7 @@ Durante el desarrollo se utilizó Node.js `v20.17.0`, que incluye `fetch`. El pr
 Solo para la preparación inicial; omitir si la carpeta ya existe.
 
 ```powershell
-cd C:\Users\reyes
+cd $HOME
 mkdir prueba-automatizacion
 cd prueba-automatizacion
 ```
@@ -25,10 +25,10 @@ cd prueba-automatizacion
 Para volver a entrar a una carpeta ya creada:
 
 ```powershell
-cd C:\Users\reyes\prueba-automatizacion
+cd "$HOME\prueba-automatizacion"
 ```
 
-Ajustar la ruta si se utiliza otro usuario de Windows.
+`$HOME` representa la carpeta del usuario actual de Windows. Si el proyecto se guardó en otra ubicación, utilizar esa ruta.
 
 ## 3. Crear o editar el archivo JavaScript
 
