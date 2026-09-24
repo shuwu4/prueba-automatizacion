@@ -15,9 +15,3 @@ npm start
 4. Calcula la urgencia.
 5. Ordena los productos.
 6. Genera una notificación con las prioridades principales.
-
-## Criterio de stock bajo
-[Tu explicación]
-
-## Criterio de urgencia
-[Tu explicación]
